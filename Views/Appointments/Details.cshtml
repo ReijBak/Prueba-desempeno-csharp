@@ -1,0 +1,9 @@
+﻿@model Prueba_desempeno_csharp.Models.Appointment
+
+<p>Id: @Model.Id</p>
+<p>Patient: @Model.Patient.Names @Model.Patient.LastNames</p>
+<p>Datetime: @Model.DateTime</p>
+<p>Medic: @Model.Medic.Names @Model.Medic.LastNames</p>
+<p>Observations: @Model.Observations</p>
+
+<a asp-action="Index" class="btn btn-secondary">Back</a>

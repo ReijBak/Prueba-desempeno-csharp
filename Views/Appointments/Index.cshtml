@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Prueba_desempeno_csharp.Models.Appointment>
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["message"]
+                    </div>
+                }
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PATIENT NAME</th>
+                        <th>DATETIME</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var appointment in Model)
+                    {
+                        <tr>
+                            <th>@appointment.Id</th>
+                            <th>@appointment.Patient.Names @appointment.Patient.LastNames</th>
+                            <th>@appointment.DateTime</th>
+                            <th>
+                                <a asp-controller="Medics" asp-action="Details" asp-route-id="@appointment.Id" class="btn btn-info">Details</a>
+                                <a asp-controller="Medics" asp-action="Edit" asp-route-id="@appointment.Id" class="btn btn-warning">Edit</a>
+                                <form id="deleteForm-@appointment.Id" asp-action="Delete" asp-route-id="@appointment.Id" method="post" class="d-inline">
+                                    <button type="button" class="btn btn-danger" onclick="confirmDelete(@appointment.Id)">Delete</button>
+                                </form>
+
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                <script>
+                                    function confirmDelete(id) {
+                                        Swal.fire({
+                                            title: "Are you sure?",
+                                            text: "This action cannot be undone!",
+                                            icon: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonColor: "#d33",
+                                            cancelButtonColor: "#616161",
+                                            confirmButtonText: "Yes, delete it!"
+                                        }).then((result) => {
+                                            if (result.isConfirmed) {
+                                                document.getElementById("deleteForm-" + id).submit();
+                                            }
+                                        });
+                                    }
+                                </script>
+                            </th>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card p-2">
+            <div class="card body px-4">
+                <form asp-action="Create" method="post">
+                    <h3>Create an appointment</h3>
+                    <div class="mt-4">
+                        <label for="">Patient</label>
+                        <select name="PatientId" class="form-control">
+                            <option value="">-- Select a patient --</option>
+                            @foreach (var p in (SelectList)ViewBag.Patients)
+                            {
+                                <option value="@p.Value">@p.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <label for="">Datetime</label>
+                        <input type="datetime-local" name="DateTime" class="form-control">
+                    </div>
+                    <div class="mt-4">
+                        <label for="">Medic</label>
+                        <select name="MedicId" class="form-control">
+                            <option value="">-- Select a medic --</option>
+                            @foreach (var m in (SelectList)ViewBag.Medics)
+                            {
+                                <option value="@m.Value">@m.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <label for="">Do you have ane observation?</label>
+                        <input type="text" name="Observations" class="form-control">
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary w-100">Save info</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
