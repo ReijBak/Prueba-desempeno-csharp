@@ -1,4 +1,4 @@
-﻿@model Prueba_desempeno_csharp.Models.Medic
+﻿@model Prueba_desempeno_csharp.Models.Appointment
 
 <div class="row">
     <div class="col-md-6">
@@ -6,30 +6,23 @@
             <h3>Edit medic</h3>
             <form asp-action="Edit" method="post">
                 <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="PatientId" />
 
                 <div class="mt-3">
-                    <label asp-for="Names" class="form-label"></label>
-                    <input asp-for="Names" class="form-control" />
+                    <label asp-for="DateTime" class="form-label"></label>
+                    <input asp-for="DateTime" class="form-control" />
                 </div>
-
+                
+                <input type="hidden" asp-for="State" />
+                
                 <div class="mt-3">
-                    <label asp-for="LastNames" class="form-label"></label>
-                    <input asp-for="LastNames" class="form-control" />
-                </div>
-
-                <div class="mt-3">
-                    <label asp-for="Email" class="form-label"></label>
-                    <input asp-for="Email" class="form-control" />
+                    <label asp-for="MedicId" class="form-label"></label>
+                    <input asp-for="MedicId" class="form-control" />
                 </div>
                 
                 <div class="mt-3">
-                    <label asp-for="Speciality" class="form-label"></label>
-                    <input asp-for="Speciality" class="form-control" />
-                </div>
-                
-                <div class="mt-3">
-                    <label asp-for="Phone" class="form-label"></label>
-                    <input asp-for="Phone" class="form-control" />
+                    <label asp-for="Observations" class="form-label"></label>
+                    <input asp-for="Observations" class="form-control" />
                 </div>
 
                 <hr />

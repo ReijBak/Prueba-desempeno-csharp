@@ -1,8 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 fw-bold text-primary">Welcome to Saint Vicent Hospital</h1>
+    <p class="lead text-secondary mt-3">
+        A comprehensive healthcare management system for patients, doctors, and appointments.
+    </p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary fw-bold">👨‍⚕️ Medics</h5>
+                <p class="card-text text-muted">Manage the information of all registered doctors in the hospital.</p>
+                <a asp-controller="Medics" asp-action="Index" class="btn btn-outline-primary">View Medics</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary fw-bold">🧍 Patients</h5>
+                <p class="card-text text-muted">Register and update patient data efficiently and securely.</p>
+                <a asp-controller="Patients" asp-action="Index" class="btn btn-outline-primary">View Patients</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary fw-bold">📅 Appointments</h5>
+                <p class="card-text text-muted">Schedule, edit, and manage all patient appointments with ease.</p>
+                <a asp-controller="Appointments" asp-action="Index" class="btn btn-outline-primary">Manage Appointments</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 text-center">
+    <p class="text-muted fst-italic">
+        "Caring for people, improving lives — that’s our mission."
+    </p>
 </div>

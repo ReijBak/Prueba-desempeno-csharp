@@ -13,18 +13,18 @@ namespace Prueba_desempeno_csharp.Models
 
         [MaxLength(45)]
         public string? Observations { get; set; }
+        
+        
+        public string State { get; set; }  = "Pending";
 
         // Clave foránea hacia Pacient
         [ForeignKey("Patient")]
         public int PatientId { get; set; }
-        public Patient Patient { get; set; }
+        public Patient? Patient { get; set; }
 
         // Clave foránea hacia Medic
         [ForeignKey("Medic")]
         public int MedicId { get; set; }
-        public Medic Medic { get; set; }
+        public Medic? Medic { get; set; }
     }
 }
-
-// [Required]
-// public DateTime DateTimeAppointment { get; set; }

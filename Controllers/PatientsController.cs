@@ -34,17 +34,19 @@ public class PatientsController : Controller
     }
     
     [HttpPost]
-    public IActionResult Edit(int id, [Bind("Id,Names,LastNames,Email,Phone")] Patient patient)
+    public IActionResult Edit(int id, [Bind("Id,Name,Age,Email,Phone")] Patient patient)
     {
-        if (id != patient.Id)
-        {
-            return BadRequest();
-        }
-
         if (ModelState.IsValid)
         {
             try
             {
+                if (_context.Patients.Any(p => p.Email == patient.Email))
+                {
+                    ModelState.AddModelError("Email", "The Email is already registered.");
+                    TempData["message"] = "The Email is already registered";
+                    return RedirectToAction(nameof(Index));
+                }
+                
                 _context.Update(patient);
                 _context.SaveChanges();
                 TempData["Message"] = "Patient updated successfully!";
@@ -83,15 +85,35 @@ public class PatientsController : Controller
     }
 
     [HttpPost]
-    public IActionResult Create([Bind("Names,LastNames,Email,Phone")] Patient patient)
+    public IActionResult Create([Bind("Id,Name,Age,Email,Phone")] Patient patient)
     {
         if (ModelState.IsValid)
-        {
-            _context.Add(patient);
-            _context.SaveChanges();
-            TempData["message"] = "The patient were created sucessfully";
-            return RedirectToAction(nameof(Index));
-        }
+            {
+                try
+                {
+                    if (_context.Patients.Any(p => p.Email == patient.Email))
+                    {
+                        ModelState.AddModelError("Email", "The Email is already registered.");
+                        TempData["message"] = "The Email is already registered";
+                        return RedirectToAction(nameof(Index));
+                    }
+                    if (_context.Patients.Any(p => p.Id == patient.Id))
+                    {
+                        ModelState.AddModelError("Id", "The Id is already registered.");
+                        TempData["message"] = "The Id is already registered";
+                        return RedirectToAction(nameof(Index));
+                    }
+                    _context.Add(patient);
+                    _context.SaveChanges();
+                    TempData["message"] = "The patient were created sucessfully";
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception)
+                {
+                    return StatusCode(500, "Error creating");
+                }
+                
+            }
         return BadRequest();
     }
 }

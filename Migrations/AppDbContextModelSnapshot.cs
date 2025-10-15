@@ -43,11 +43,17 @@ namespace Prueba_desempeno_csharp.Migrations
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
 
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("MedicId");
+                    b.HasIndex("MedicId", "DateTime")
+                        .IsUnique();
 
-                    b.HasIndex("PatientId");
+                    b.HasIndex("PatientId", "DateTime")
+                        .IsUnique();
 
                     b.ToTable("Appointments");
                 });
@@ -65,12 +71,7 @@ namespace Prueba_desempeno_csharp.Migrations
                         .HasMaxLength(45)
                         .HasColumnType("varchar(45)");
 
-                    b.Property<string>("LastNames")
-                        .IsRequired()
-                        .HasMaxLength(45)
-                        .HasColumnType("varchar(45)");
-
-                    b.Property<string>("Names")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(45)
                         .HasColumnType("varchar(45)");
@@ -86,6 +87,9 @@ namespace Prueba_desempeno_csharp.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Medics");
                 });
 
@@ -97,17 +101,15 @@ namespace Prueba_desempeno_csharp.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(45)
                         .HasColumnType("varchar(45)");
 
-                    b.Property<string>("LastNames")
-                        .IsRequired()
-                        .HasMaxLength(45)
-                        .HasColumnType("varchar(45)");
-
-                    b.Property<string>("Names")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(45)
                         .HasColumnType("varchar(45)");
@@ -117,6 +119,9 @@ namespace Prueba_desempeno_csharp.Migrations
                         .HasColumnType("varchar(45)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("Patients");
                 });

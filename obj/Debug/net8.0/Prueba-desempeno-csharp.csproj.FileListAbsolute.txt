@@ -132,3 +132,9 @@
 /home/csharp/Documentos/Steve/Prueba-desempeno-csharp/obj/Debug/net8.0/Prueba-desempeno-csharp.pdb
 /home/csharp/Documentos/Steve/Prueba-desempeno-csharp/obj/Debug/net8.0/Prueba-desempeno-csharp.genruntimeconfig.cache
 /home/csharp/Documentos/Steve/Prueba-desempeno-csharp/obj/Debug/net8.0/ref/Prueba-desempeno-csharp.dll
+/home/csharp/Documentos/Steve/Prueba-desempeno-csharp/obj/Debug/net8.0/Prueba-desempeno-csharp.sourcelink.json
+/home/csharp/Documentos/Steve/Prueba-desempeno-csharp/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
+/home/csharp/Documentos/Steve/Prueba-desempeno-csharp/bin/Debug/net8.0/MailKit.dll
+/home/csharp/Documentos/Steve/Prueba-desempeno-csharp/bin/Debug/net8.0/MimeKit.dll
+/home/csharp/Documentos/Steve/Prueba-desempeno-csharp/bin/Debug/net8.0/System.Security.Cryptography.Pkcs.dll
+/home/csharp/Documentos/Steve/Prueba-desempeno-csharp/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll

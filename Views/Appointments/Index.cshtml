@@ -15,6 +15,7 @@
                         <th>ID</th>
                         <th>PATIENT NAME</th>
                         <th>DATETIME</th>
+                        <th>STATE</th>
                         <th>ACTIONS</th>
                     </tr>
                     </thead>
@@ -23,11 +24,12 @@
                     {
                         <tr>
                             <th>@appointment.Id</th>
-                            <th>@appointment.Patient.Names @appointment.Patient.LastNames</th>
+                            <th>@appointment.Patient.Name</th>
                             <th>@appointment.DateTime</th>
+                            <th>@appointment.State</th>
                             <th>
-                                <a asp-controller="Medics" asp-action="Details" asp-route-id="@appointment.Id" class="btn btn-info">Details</a>
-                                <a asp-controller="Medics" asp-action="Edit" asp-route-id="@appointment.Id" class="btn btn-warning">Edit</a>
+                                <a asp-controller="Appointments" asp-action="Details" asp-route-id="@appointment.Id" class="btn btn-info">Details</a>
+                                <a asp-controller="Appointments" asp-action="Edit" asp-route-id="@appointment.Id" class="btn btn-warning">Edit</a>
                                 <form id="deleteForm-@appointment.Id" asp-action="Delete" asp-route-id="@appointment.Id" method="post" class="d-inline">
                                     <button type="button" class="btn btn-danger" onclick="confirmDelete(@appointment.Id)">Delete</button>
                                 </form>
@@ -88,7 +90,7 @@
                         </select>
                     </div>
                     <div class="mt-4">
-                        <label for="">Do you have ane observation?</label>
+                        <label for="">Do you have any observation?</label>
                         <input type="text" name="Observations" class="form-control">
                     </div>
                     <hr>

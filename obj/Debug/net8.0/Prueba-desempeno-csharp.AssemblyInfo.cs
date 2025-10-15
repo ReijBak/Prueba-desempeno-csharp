@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Prueba-desempeno-csharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bf8ca8eea38747704b9b2409b6e78df8a157317")]
 [assembly: System.Reflection.AssemblyProductAttribute("Prueba-desempeno-csharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Prueba-desempeno-csharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

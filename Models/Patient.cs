@@ -8,10 +8,10 @@ namespace Prueba_desempeno_csharp.Models
         public int Id { get; set; }
 
         [Required, MaxLength(45)]
-        public string Names { get; set; }
+        public string Name { get; set; }
 
-        [Required, MaxLength(45)]
-        public string LastNames { get; set; }
+        [Required]
+        public int Age { get; set; }
 
         [Required, MaxLength(45)]
         public string Email { get; set; }

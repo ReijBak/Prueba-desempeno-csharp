@@ -13,8 +13,8 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>NAMES</th>
-                        <th>LASTNAMES</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
                         <th>ACTIONS</th>
                     </tr>
                     </thead>
@@ -23,8 +23,8 @@
                     {
                         <tr>
                             <th>@patient.Id</th>
-                            <th>@patient.Names</th>
-                            <th>@patient.LastNames</th>
+                            <th>@patient.Name</th>
+                            <th>@patient.Email</th>
                             <th>
                                 <a asp-controller="Patients" asp-action="Details" asp-route-id="@patient.Id" class="btn btn-info">Details</a>
                                 <a asp-controller="Patients" asp-action="Edit" asp-route-id="@patient.Id" class="btn btn-warning">Edit</a>
@@ -64,12 +64,16 @@
                 <form asp-action="Create" method="post">
                     <h3>Register a patient</h3>
                     <div class="mt-4">
-                        <label for="">Names</label>
-                        <input type="text" name="Names" class="form-control">
+                        <label for="">Id</label>
+                        <input type="number" name="Id" class="form-control">
                     </div>
                     <div class="mt-4">
-                        <label for="">Last Names</label>
-                        <input type="text" name="LastNames" class="form-control">
+                        <label for="">Name</label>
+                        <input type="text" name="Name" class="form-control">
+                    </div>
+                    <div class="mt-4">
+                        <label for="">Age</label>
+                        <input type="number" name="Age" class="form-control">
                     </div>
                     <div class="mt-4">
                         <label for="">Email</label>
