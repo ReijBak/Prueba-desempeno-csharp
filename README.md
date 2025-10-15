@@ -139,9 +139,15 @@ The system allows you to handle **patients, doctors, appointments, and email not
 ### Saint Vicent Development Team
 
 - Juan Steven Cardona Grisales
+  CC 1000540387
+  stevencardona2001@gmail.com
+  Clan van Rossum 
 
 ## 🐞 Known Issues
 
 No major issues reported yet. Feel free to open an issue if you find one.
+
+### Unique project's likn 
+https://github.com/ReijBak/Prueba-desempeno-csharp
 
 🏗️ Built with dedication, precision, and teamwork to simulate a real hospital management system in ASP.NET Core.
