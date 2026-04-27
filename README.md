@@ -25,7 +25,7 @@ The system allows you to handle **patients, doctors, appointments, and email not
 ## ⚙️ Installation
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/SaintVicentHospital.git
+   git clone https://github.com/ReijBak/SaintVicentHospital.git
    
 2. Open the solution in Visual Studio, Rider, or VS Code.
 
