@@ -53,6 +53,7 @@ The system allows you to handle **patients, doctors, appointments, and email not
 
   ## 📂 Project Structure
 
+```
   SaintVicentHospital/
 │
 ├── Controllers/
@@ -81,6 +82,7 @@ The system allows you to handle **patients, doctors, appointments, and email not
 │   └── images/
 │
 └── appsettings.json
+```
 
 ## 💡 Features
 
